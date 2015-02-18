@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="head_bottom_blue_color">#3FA9E2</color>
+    <color name="back_btn_stroke_color">#9DD1F0</color>
+    <color name="back_btn_bg_pressed">#ff4abcff</color>
+    <color name="circle_bg">#3D8FBF</color>
+</resources>

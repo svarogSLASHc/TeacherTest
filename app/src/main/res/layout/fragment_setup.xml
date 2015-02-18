@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/fragment_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_first_name" />
+
+                <EditText
+                    android:id="@+id/firstName_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle"
+                    android:inputType="textCapSentences" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_middle_name" />
+
+                <EditText
+                    android:id="@+id/middleName_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle"
+                    android:inputType="textCapSentences" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_last_name" />
+
+                <EditText
+                    android:id="@+id/lastName_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle"
+                    android:inputType="textCapSentences" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_mobile" />
+
+                <EditText
+                    android:id="@+id/mobile_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle"
+                    android:inputType="phone" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_email" />
+
+                <EditText
+                    android:id="@+id/email_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle"
+                    android:inputType="textEmailAddress" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_gender" />
+
+                <Spinner
+                    android:id="@+id/gender_Spinner_SetupFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_back_normal"
+                    tools:listitem="@layout/spinner_item" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_date_of_birth" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/chooseBirthDate_ImageView_SetupFragment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/bg_circle"
+                        android:src="@drawable/navigation_previous_item" />
+
+                    <EditText
+                        android:id="@+id/birthDate_EditText_SetupFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/fragment_fields_top_margin"
+                        android:layout_toLeftOf="@id/chooseBirthDate_ImageView_SetupFragment"
+                        android:background="@drawable/bg_edittext"
+                        android:singleLine="true" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_certificate_degree" />
+
+                <EditText
+                    android:id="@+id/certificste_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_employment_date" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/chooseEmploymentDate_ImageView_SetupFragment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/bg_circle"
+                        android:src="@drawable/navigation_previous_item" />
+
+                    <EditText
+                        android:id="@+id/employmentDate_EditText_SetupFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/fragment_fields_top_margin"
+                        android:layout_toLeftOf="@id/chooseEmploymentDate_ImageView_SetupFragment"
+                        android:background="@drawable/bg_edittext"
+                        android:singleLine="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_primary_classroom" />
+
+                <Spinner
+                    android:id="@+id/classroom_Spinner_SetupFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_back_normal"
+                    tools:listitem="@layout/spinner_item" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_mobile_phone_numb_2" />
+
+                <EditText
+                    android:id="@+id/mob2_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle"
+                    android:inputType="phone" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_mobile_phone_numb_3" />
+
+                <EditText
+                    android:id="@+id/mob3_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle"
+                    android:inputType="phone" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_land_phone_number" />
+
+                <EditText
+                    android:id="@+id/landPhone_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_email_address_2" />
+
+                <EditText
+                    android:id="@+id/email2_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle"
+                    android:inputType="textEmailAddress" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_email_address_3" />
+
+                <EditText
+                    android:id="@+id/email3_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle"
+                    android:inputType="textEmailAddress" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_status" />
+
+                <EditText
+                    android:id="@+id/status_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_updated_by" />
+
+                <EditText
+                    android:id="@+id/updatedBy_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SetupFieldStyle">
+
+                <TextView
+                    style="@style/SetupTextViewStyle"
+                    android:text="@string/setup_created_by" />
+
+                <EditText
+                    android:id="@+id/createdBy_EditText_SetupFragment"
+                    style="@style/SetupEditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/SetupFieldStyle"
+                android:padding="@dimen/fragment_fields_top_margin">
+
+                <Button
+                    android:id="@+id/cancel_Button_SetupFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_back_selector"
+                    android:text="@string/setup_cancel"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/submit_Button_SetupFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_back_selector"
+                    android:text="@string/setup_Submit"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/loader_ImageView_MainActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/loader"
+        android:visibility="gone" />
+
+</RelativeLayout>
