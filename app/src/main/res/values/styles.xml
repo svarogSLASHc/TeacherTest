@@ -2,11 +2,12 @@
 
     <style name="MyTheme" parent="android:Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/MyActionButtonStyle</item>
+        <item name="android:icon">@android:color/transparent</item>
     </style>
 
     <style name="MyActionButtonStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">@color/head_bottom_blue_color</item>
-        <item name="android:icon">@null</item>
+        <item name="android:icon">@android:color/transparent</item>
     </style>
 
     <style name="SetupTextViewStyle">

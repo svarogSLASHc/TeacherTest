@@ -11,10 +11,9 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
-import org.apache.http.entity.ByteArrayEntity;
+import org.apache.http.entity.StringEntity;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -88,26 +87,32 @@ public class RestRequest {
             callback.OnFailure("No internet connection!");
         }
         try {
-            client.setBasicAuth(AppConstant.USER_NAME, AppConstant.USER_PASSWORD);
-            ByteArrayEntity entity = new ByteArrayEntity(mGson.toJson(teacher).getBytes("UTF-8"));
+            client.addHeader("Content-Type", AppConstant.CONTENT_TYPE);
+            client.addHeader("x-location", AppConstant.X_LOCATION);
+            client.addHeader("x-device-info", AppConstant.X_DEVICE_INFO);
+            StringEntity entity = new StringEntity(mGson.toJson(teacher), "UTF-8");
             client.post(context,
                     AppConstant.BASE_URL + AppConstant.POST_TEACHER,
-                    entity, "application/json",
+                    entity,
+                    "application/json",
                     new JsonHttpResponseHandler() {
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                             super.onSuccess(statusCode, headers, response);
+                            callback.OnSuccess("Success");
                         }
 
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                             super.onSuccess(statusCode, headers, response);
+                            callback.OnSuccess("Success");
                         }
 
                         @Override
                         public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                             super.onFailure(statusCode, headers, throwable, errorResponse);
                             callback.OnFailure(null);
+
                         }
 
                         @Override
@@ -125,6 +130,7 @@ public class RestRequest {
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, String responseString) {
                             super.onSuccess(statusCode, headers, responseString);
+                            callback.OnSuccess("Success");
                         }
                     });
 
@@ -133,7 +139,3 @@ public class RestRequest {
         }
     }
 }
-//        client.addHeader("Authorization", AppConstant.AUTHORIZATION);
-//        client.addHeader("Content-Type", AppConstant.CONTENT_TYPE);
-//        client.addHeader("x-location", AppConstant.X_LOCATION);
-//        client.addHeader("x-device-info", AppConstant.X_DEVICE_INFO);
